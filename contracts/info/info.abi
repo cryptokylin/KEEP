@@ -1,0 +1,117 @@
+{
+  "version": "eosio::abi/1.0",
+  "types": [
+    {
+      "new_type_name": "account_name",
+      "type": "name"
+    }
+  ],
+  "structs": [
+    {
+      "name": "info",
+      "base": "",
+      "fields": [
+        {
+          "name": "contract",
+          "type": "account_name"
+        },
+        {
+          "name": "website",
+          "type": "string"
+        },
+        {
+          "name": "github",
+          "type": "string"
+        },
+        {
+          "name": "src_ipfs",
+          "type": "string"
+        },
+        {
+          "name": "image_id",
+          "type": "string"
+        },
+        {
+          "name": "build_script",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "update",
+      "base": "",
+      "fields": [
+        {
+          "name": "owner",
+          "type": "account_name"
+        },
+        {
+          "name": "contract",
+          "type": "account_name"
+        },
+        {
+          "name": "website",
+          "type": "string"
+        },
+        {
+          "name": "github",
+          "type": "string"
+        },
+        {
+          "name": "src_ipfs",
+          "type": "string"
+        },
+        {
+          "name": "image_id",
+          "type": "string"
+        },
+        {
+          "name": "build_script",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "remove",
+      "base": "",
+      "fields": [
+        {
+          "name": "owner",
+          "type": "account_name"
+        },
+        {
+          "name": "contract",
+          "type": "account_name"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "update",
+      "type": "update",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "remove",
+      "type": "remove",
+      "ricardian_contract": ""
+    }
+  ],
+  "tables": [
+    {
+      "name": "info",
+      "index_type": "i64",
+      "key_names": [
+        "contract"
+      ],
+      "key_types": [
+        "name"
+      ],
+      "type": "info"
+    }
+  ],
+  "ricardian_clauses": [],
+  "error_messages": [],
+  "abi_extensions": []
+}
