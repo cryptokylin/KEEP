@@ -5,17 +5,23 @@
 
 #include "info.hpp"
 
-void contracts::update(account_name owner,
-                       account_name contract,
-                       string website,
-                       string github,
-                       string src_ipfs,
-                       string image_id,
-                       string build_script) {
+void contracts::createupdate( account_name    owner,
+                        account_name    contract,
+                        string          website,
+                        string          logo,
+                        string          whitepaper,
+                        string          github,
+                        string          ipfs,
+                        string          memo) {
 
     require_auth( owner );
 
-    eosio_assert( website.size() <= 70, "website has more than 70 bytes" );
+    eosio_assert( website.size() <= 50, "website has more than 70 bytes" );
+    eosio_assert( logo.size() <= 100, "logo url has more than 100 bytes" );
+    eosio_assert( whitepaper.size() <= 100, "whitepaper url has more than 100 bytes" );
+    eosio_assert( github.size() <= 100, "github url has more than 100 bytes" );
+    eosio_assert( ipfs.size() == 46, "ipfs address length not equal 46" );
+    eosio_assert( memo.size() <= 300, "memo has more than 300 bytes" );
 
     information info_t( _self, owner);
 
@@ -25,30 +31,33 @@ void contracts::update(account_name owner,
         info_t.emplace( owner, [&]( auto& r ){
             r.contract = contract;
             r.website = website;
+            r.logo = logo;
+            r.whitepaper = whitepaper;
             r.github = github;
-            r.src_ipfs = src_ipfs;
-            r.image_id = image_id;
-            r.build_script = build_script;
+            r.ipfs = ipfs;
+            r.memo = memo;
         });
     } else{
         info_t.modify( existing, 0, [&]( auto& r ) {
             r.contract = contract;
             r.website = website;
+            r.logo = logo;
+            r.whitepaper = whitepaper;
             r.github = github;
-            r.src_ipfs = src_ipfs;
-            r.image_id = image_id;
-            r.build_script = build_script;
+            r.ipfs = ipfs;
+            r.memo = memo;
         });
     }
 }
 
 void contracts::remove( account_name owner, account_name contract ) {
+
     require_auth( owner );
+
     information info_t( _self, owner);
 
     auto existing = info_t.find( contract );
-
     info_t.erase( existing );
 }
 
-EOSIO_ABI( contracts, (update)(remove))
+EOSIO_ABI( contracts, (createupdate)(remove))

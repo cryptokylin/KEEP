@@ -32,20 +32,22 @@ if [ "${action}" == 'test' ]; then
     set -x
 
     test_update(){
-        $cleos push action ${accountaddr} update '["inita","account11", "www.abc.com", "www.github.com","ipfs","image-id","script"]' -p inita@active
-        $cleos push action ${accountaddr} update '["inita","account12", "www.abc.com", "www.github.com","ipfs","image-id","script"]' -p inita@active
-        $cleos push action ${accountaddr} update '["initb","account21", "www.abc.com", "www.github.com","ipfs","image-id","script"]' -p initb@active
-        $cleos push action ${accountaddr} update '["initb","account22", "www.abc.com", "www.github.com","ipfs","image-id","script"]' -p initb@active
+        $cleos push action ${accountaddr} update '["inita","account11", "https://www.website.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p inita@active
+        $cleos push action ${accountaddr} update '["inita","account12", "https://www.website.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p inita@active
+        $cleos push action ${accountaddr} update '["initb","account21", "https://www.website.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p initb@active
+        $cleos push action ${accountaddr} update '["initb","account22", "https://www.website.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p initb@active
         $cleos get table ${accountaddr} inita info
         $cleos get table ${accountaddr} initb info
 
 
         $cleos push action ${accountaddr} remove '["inita","account11"]' -p inita@active
+        $cleos push action ${accountaddr} remove '["inita","account12"]' -p inita@active
+        $cleos push action ${accountaddr} remove '["initb","account21"]' -p initb@active
+        $cleos push action ${accountaddr} remove '["initb","account22"]' -p initb@active
         $cleos get table ${accountaddr} inita info
+        $cleos get table ${accountaddr} initb info
     }
     test_update
-
-
 
     set +x
 fi
