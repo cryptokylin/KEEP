@@ -44,20 +44,20 @@ createupdate 用于创建记录，若记录已存在，则更新该记录，参�
 
 | 名称  | 类型  | 示例  | 限制 | 说明 |
 |---|---|---|---|---|
-| owner     | account_name  | teamleader11                      | <=12个字符  | 本条记录的管理者 |
-| contract  | account_name  | contract1111                      | <=12个字符  |部署合约的账户 |
-| website   | string  | https://www.website.com                 | <=50个字符  |  |
-| logo      | string  | https://www.website.com/logo.png        | <=100个字符 |  |
-| whitepaper| string  | https://www.website.com/whitepaper.pdf  | <=100个字符 |  |
-| github    | string  | https://github.com/repo/project         | <=100个字符 |  |
-| src_zip   | string  | 见下文                                   | =46个字符 |  |
-| memo      | string  |                                         | <=300个字符 | 一段文字 |
+| owner     | account_name  | teamleader11                        | <=12个字符  | 本条记录的管理者 |
+| contract  | account_name  | contract1111                        | <=12个字符  |部署合约的账户 |
+| website   | string  | `https://www.website.com`                 | <=50个字符  |  |
+| logo      | string  | `https://www.website.com/logo.png`        | <=100个字符 |  |
+| whitepaper| string  | `https://www.website.com/whitepaper.pdf`  | <=100个字符 |  |
+| github    | string  | `https://github.com/repo/project`         | <=100个字符 |  |
+| src_zip   | string  | 见下文                                     | =46个字符 |  |
+| memo      | string  |                                           | <=300个字符 | 一段文字 |
 
 
 src_zip 示例：  
-如果压缩包在官网: https://www.website.com/src.zip  
-如果在github，则需要注意是raw文件地址: https://raw.githubusercontent.com/account/repo/master/src.zip  
-如果再IPFS网络:QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7  
+如果压缩包在官网: `例如: https://www.website.com/src.zip`  
+如果在github，则需要注意是raw文件地址: `例如: https://raw.githubusercontent.com/account/repo/master/src.zip`  
+如果再IPFS网络:`例如: QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7`  
 
 示例命令
 ```
