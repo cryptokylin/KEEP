@@ -82,13 +82,13 @@ cleos push action contracts111 remove '["teamleader11","contract1111"]' -p teaml
 ### 2. 通过第三方安全团队的审核
 1. 溢出审计
 2. 权限控制审计
-  - 权限漏洞审计
-  - 权限过大审计
+    - 权限漏洞审计
+    - 权限过大审计
 3. 安全设计审计
-  - 硬编码地址安全
-  - 显现编码安全
-  - 异常校验审计
-  - 类型安全审计
+    - 硬编码地址安全
+    - 显现编码安全
+    - 异常校验审计
+    - 类型安全审计
 4. 性能优化审计
 5. 设计逻辑审计
 
@@ -110,4 +110,4 @@ cleos push action eosio updateauth '{"account": "${account}", "permission": "own
 ### 4. 接口规范
 目前接口规范正在逐步制定中，我们也真诚希望任何对此感兴趣的开发者贡献力量，如下是部分接口规范。
 
-[token类合约接口规范](https://github.com/cryptokylin/KEEP/interfaces/token.md)
+[token类合约接口规范](https://github.com/cryptokylin/KEEP/blob/master/interfaces/token.md)
