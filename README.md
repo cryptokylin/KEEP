@@ -109,4 +109,5 @@ cleos push action eosio updateauth '{"account": "${account}", "permission": "own
 
 ### 4. 接口规范
 目前接口规范正在逐步制定中，我们也真诚希望任何对此感兴趣的开发者贡献力量，如下是部分接口规范。
+
 [token类合约接口规范](https://github.com/cryptokylin/KEEP/interfaces/token.md)
