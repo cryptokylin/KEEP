@@ -6,7 +6,7 @@ action=$1
 
 # step 2: set your own variables
 contract="info"        # contract file's and folder's base name
-accountaddr="info"     # account who set the contract code to the chain
+accountaddr="contracts111"     # account who set the contract code to the chain
 issuer="boss"               # token issuer
 
 
@@ -14,7 +14,7 @@ issuer="boss"               # token issuer
 if [ "${action}" == '' ];then
     . scripts/boot.sh
 
-    for name in ${accountaddr} boss inita initb initc initd; do
+    for name in ${accountaddr} boss inita initb initc initd bigboss11111 contract5111; do
         new_account ${name}
     done
 fi
@@ -46,6 +46,10 @@ if [ "${action}" == 'test' ]; then
         $cleos push action ${accountaddr} remove '["initb","account22"]' -p initb@active
         $cleos get table ${accountaddr} inita info
         $cleos get table ${accountaddr} initb info
+
+
+        $cleos push action ${accountaddr} createupdate '["bigboss11111","contract5111", "https://www.website.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p bigboss11111@active
+
     }
     test_update
 

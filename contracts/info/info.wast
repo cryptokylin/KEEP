@@ -37,7 +37,7 @@
  (data (i32.const 48) "logo url has more than 100 bytes\00")
  (data (i32.const 96) "whitepaper url has more than 100 bytes\00")
  (data (i32.const 144) "github url has more than 100 bytes\00")
- (data (i32.const 192) "src_zip address length not equal 46\00")
+ (data (i32.const 192) "src_zip url has more than 100 bytes\00")
  (data (i32.const 240) "memo has more than 300 bytes\00")
  (data (i32.const 272) "object passed to iterator_to is not in multi_index\00")
  (data (i32.const 336) "cannot pass end iterator to modify\00")
@@ -297,9 +297,9 @@
    )
   )
   (call $eosio_assert
-   (i32.eq
+   (i32.lt_u
     (get_local $10)
-    (i32.const 46)
+    (i32.const 101)
    )
    (i32.const 192)
   )

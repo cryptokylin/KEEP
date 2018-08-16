@@ -20,7 +20,7 @@ void contracts::createupdate( account_name    owner,
     eosio_assert( logo.size() <= 100, "logo url has more than 100 bytes" );
     eosio_assert( whitepaper.size() <= 100, "whitepaper url has more than 100 bytes" );
     eosio_assert( github.size() <= 100, "github url has more than 100 bytes" );
-    eosio_assert( src_zip.size() == 46, "src_zip address length not equal 46" );
+    eosio_assert( src_zip.size() <= 100, "src_zip url has more than 100 bytes" );
     eosio_assert( memo.size() <= 300, "memo has more than 300 bytes" );
 
     information info_t( _self, owner);

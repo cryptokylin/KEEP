@@ -50,7 +50,7 @@ createupdate 用于创建记录，若记录已存在，则更新该记录，参�
 | logo      | string  | `https://www.website.com/logo.png`        | <=100个字符 |  |
 | whitepaper| string  | `https://www.website.com/whitepaper.pdf`  | <=100个字符 |  |
 | github    | string  | `https://github.com/repo/project`         | <=100个字符 |  |
-| src_zip   | string  | 见下文                                     | =46个字符 |  |
+| src_zip   | string  | 见下文                                     | <=100个字符 |  |
 | memo      | string  |                                           | <=300个字符 | 一段文字 |
 
 
