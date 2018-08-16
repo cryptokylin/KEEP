@@ -11,7 +11,7 @@ void contracts::createupdate( account_name    owner,
                         string          logo,
                         string          whitepaper,
                         string          github,
-                        string          ipfs,
+                        string          src_zip,
                         string          memo) {
 
     require_auth( owner );
@@ -20,7 +20,7 @@ void contracts::createupdate( account_name    owner,
     eosio_assert( logo.size() <= 100, "logo url has more than 100 bytes" );
     eosio_assert( whitepaper.size() <= 100, "whitepaper url has more than 100 bytes" );
     eosio_assert( github.size() <= 100, "github url has more than 100 bytes" );
-    eosio_assert( ipfs.size() == 46, "ipfs address length not equal 46" );
+    eosio_assert( src_zip.size() == 46, "src_zip address length not equal 46" );
     eosio_assert( memo.size() <= 300, "memo has more than 300 bytes" );
 
     information info_t( _self, owner);
@@ -34,7 +34,7 @@ void contracts::createupdate( account_name    owner,
             r.logo = logo;
             r.whitepaper = whitepaper;
             r.github = github;
-            r.ipfs = ipfs;
+            r.src_zip = src_zip;
             r.memo = memo;
         });
     } else{
@@ -44,7 +44,7 @@ void contracts::createupdate( account_name    owner,
             r.logo = logo;
             r.whitepaper = whitepaper;
             r.github = github;
-            r.ipfs = ipfs;
+            r.src_zip = src_zip;
             r.memo = memo;
         });
     }

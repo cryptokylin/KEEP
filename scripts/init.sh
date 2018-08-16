@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ROOT_DIR='/Users/song/Home/Golang/src/github.com/EosTokenMarket/eosip-contract/'
+ROOT_DIR='/Users/song/Home/Golang/src/github.com/cryptokylin/KEEP/'
 
 IMAGE_OFFICAL='eosio/eos'
 IMAGE_MAINNET='eoslaomao/eos:mainnet-1.1.1'

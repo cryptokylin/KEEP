@@ -32,7 +32,7 @@
           "type": "string"
         },
         {
-          "name": "ipfs",
+          "name": "src_zip",
           "type": "string"
         },
         {
@@ -70,7 +70,7 @@
           "type": "string"
         },
         {
-          "name": "ipfs",
+          "name": "src_zip",
           "type": "string"
         },
         {

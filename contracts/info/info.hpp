@@ -22,7 +22,7 @@ public:
                  string          logo,
                  string          whitepaper,
                  string          github,
-                 string          ipfs,
+                 string          src_zip,
                  string          memo);
 
     /// @abi action
@@ -37,7 +37,7 @@ private:
         string          logo;           // logo link.
         string          whitepaper;     // whitepaper link.
         string          github;         // project github address.
-        string          ipfs;           // source c++ code and build.sh compression package ipfs address.
+        string          src_zip;        // c++ source code and build.sh compression package address.
         string          memo;
 
         uint64_t primary_key()const { return contract; }
