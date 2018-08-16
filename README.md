@@ -19,11 +19,11 @@
 2. logo连接用于方便第三方公示网站展示项目logo。  
 3. 合约文件压缩包中除包含c++源文件外，还必须包含一个脚本文件`build.sh`，此脚本文件用于第三方下载此压缩包并解压后，可以快速编译此合约。  
 压缩命令统一为`zip contract.zip ${contract_folder}`，这样第三方可以统一用`unzip ${contract_folder}`命令进行解压。  
-为了验证链上wasm文件是对应的c++源文件编译得到的，在build.sh中必须使用docker进行编译，我们建议统一使用镜像 eosio/eos-dev 进行编译。  
-build.sh脚本中必须包含image_name，image_version，image_id，以方便第三方进行自动化处理，
-并且 `docker run` 命令中必须使用 `image_id` 指定镜像，不能使用image_name:image_version的方式，
+为了验证链上wasm文件是对应的c++源文件编译得到的，在build.sh中必须使用docker进行编译，我们建议统一使用镜像 `eosio/eos-dev` 进行编译。  
+build.sh脚本中必须包含`image_name`，`image_version`，`image_id`，以方便第三方进行自动化处理，
+并且 `docker run` 命令中必须使用 `image_id` 指定镜像，不能使用`image_name:image_version`的方式，
 因为可以更新镜像而不改变版本号，只有image_id能唯一确定具体的镜像。  
-docker run 命令之后可以再增加对 abi文件修改的命令。  
+`docker run` 命令之后可以再增加对 abi 文件修改的命令。  
 
 build.sh模板如下
 ``` 
