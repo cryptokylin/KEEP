@@ -28,7 +28,6 @@ struct currency_stats {
     asset          supply;
     asset          max_supply;
     account_name   issuer;
-    string         token_name;
 
     uint64_t primary_key()const { return supply.symbol.name(); }
 };
