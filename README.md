@@ -17,8 +17,8 @@
 说明:
 1. 按照EOS账户命名规则，合约账户长度为1-12个字符，字符范围为a-z,1-5和小数点。  
 2. logo连接用于方便第三方公示网站展示项目logo。  
-3. 合约文件压缩包中除包含c++源文件外，还必须包含一个脚本文件`build.sh`，此脚本文件用于第三方下载此压缩包并解压后，可以快速编译此合约。  
-压缩命令统一为`zip contract.zip ${contract_folder}`，这样第三方可以统一用`unzip ${contract_folder}`命令进行解压。  
+3. 合约文件压缩包中除包含c++源文件外，还必须包含一个脚本文件`build.sh`，此脚本文件用于第三方下载此压缩包并解压后，可以快速编译此合约。
+压缩命令统一为`zip ${contract_folder}.zip ${contract_folder}`，即压缩包名字为合约文件夹名字加".zip"后缀，因此第三方可以统一用`unzip ${contract_folder}.zip`命令进行解压。  
 为了验证链上wasm文件是对应的c++源文件编译得到的，在build.sh中必须使用docker进行编译，我们建议统一使用镜像 `eosio/eos-dev` 进行编译。  
 build.sh脚本中必须包含`image_name`，`image_version`，`image_id`，以方便第三方进行自动化处理，
 并且 `docker run` 命令中必须使用 `image_id` 指定镜像，不能使用`image_name:image_version`的方式，
@@ -39,7 +39,10 @@ docker run --rm -v `pwd`:/scts ${image_id} bash -c "cd /scts \
 项目方可以将合约文件压缩包放置在 github、自己的官网、IPFS网络，以方便第三方获取并进行验证。
 
 4. 在合约中注册、更新、删除信息
-管理此注册信息的合约账户为contracts111，此合约有两个方法:createupdate 和 remove
+管理此注册信息的合约账户为`cryptokylin1`（EOS主网）。  
+您也可以在Kylin测试网进行测试，Kylin测试网上合约账户是`contracts111`。  
+此合约有两个方法:createupdate 和 remove。  
+
 createupdate 用于创建记录，若记录已存在，则更新该记录，参数如下   
 
 | 名称  | 类型  | 示例  | 限制 | 说明 |
@@ -79,7 +82,10 @@ remove 用于删除一条记录，参数如下
 cleos push action contracts111 remove '["teamleader11","contract1111"]' -p teamleader11@active
 ```
 
-### 2. 通过第三方安全团队的审核
+### 2 包含适当的李嘉图合约
+待完善...
+
+### 3. 通过第三方安全团队的审核
 1. 溢出审计
 2. 权限控制审计
     - 权限漏洞审计
@@ -93,7 +99,7 @@ cleos push action contracts111 remove '["teamleader11","contract1111"]' -p teaml
 5. 设计逻辑审计
 
 
-### 3. resign权限  
+### 4. resign权限  
 项目方自行决定是否resign权限，以及将权限resign给谁。 
  
 如果想彻底放弃升级权限，则resign权限给 EOS1111111111111111111111111111111114T1Anm，命令如下:
