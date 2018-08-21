@@ -48,7 +48,6 @@ createupdate 用于创建记录，若记录已存在，则更新该记录，参�
 
 | 名称  | 类型  | 示例  | 限制 | 说明 |
 |---|---|---|---|---|
-| owner     | account_name  | teamleader11                        | <=12个字符  | 本条记录的管理者 |
 | contract  | account_name  | contract1111                        | <=12个字符  |部署合约的账户 |
 | website   | string  | `https://www.website.com`                 | <=50个字符  |  |
 | logo      | string  | `https://www.website.com/logo.png`        | <=100个字符 |  |
@@ -65,26 +64,26 @@ src_zip 示例：
 
 示例命令
 ```
-cleos push action cryptokylin1 createupdate '["teamleader11","contract1111",\
+# register project contract information to cryptokylin1
+cleos push action cryptokylin1 createupdate '["contract1111",\
     "https://www.website.com", "https://www.website.com/logo.png", \
     "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", \
-    "https://www.website.com/src.zip","memo"]' -p teamleader11@active
+    "https://www.website.com/src.zip","memo"]' -p contract1111@active
     
-cleos get table cryptokylin1 teamleader11 info
+# get registered contract information.   
+ctr=contract1111
+cleos get table cryptokylin1 cryptokylin1 info | jq " .rows[]|select(.contract==\"${ctr}\")"
 ```
-
-
 
 remove 用于删除一条记录，参数如下 
   
 | 名称  | 类型  | 示例  | 限制 | 说明 |
 |---|---|---|---|---|
-| owner     | account_name  | teamleader11  | <=12个字符 | 本条记录的管理者 |
 | contract  | account_name  | contract1111  | <=12个字符  |部署合约的账户 |
 
 示例命令
 ```
-cleos push action cryptokylin1 remove '["teamleader11","contract1111"]' -p teamleader11@active
+cleos push action cryptokylin1 remove '["contract1111"]' -p contract1111@active
 ```
 
 ### 2 包含适当的李嘉图合约

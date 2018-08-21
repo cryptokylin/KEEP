@@ -32,23 +32,18 @@ if [ "${action}" == 'test' ]; then
     set -x
 
     test_update(){
-        $cleos push action ${accountaddr} createupdate '["inita","account11", "https://www.website.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p inita@active
-        $cleos push action ${accountaddr} createupdate '["inita","account12", "https://www.website.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p inita@active
-        $cleos push action ${accountaddr} createupdate '["initb","account21", "https://www.website.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p initb@active
-        $cleos push action ${accountaddr} createupdate '["initb","account22", "https://www.website.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p initb@active
-        $cleos get table ${accountaddr} inita info
-        $cleos get table ${accountaddr} initb info
+        $cleos push action ${accountaddr} createupdate '["inita", "https://www.website-a1.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p inita@active
+        $cleos push action ${accountaddr} createupdate '["inita", "https://www.website-a2.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p inita@active
+        $cleos push action ${accountaddr} createupdate '["initb", "https://www.website-b1.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p initb@active
+        $cleos push action ${accountaddr} createupdate '["initb", "https://www.website-b2.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p initb@active
+        $cleos get table ${accountaddr} ${accountaddr} info
+        $cleos get table ${accountaddr} ${accountaddr} info
 
 
-        $cleos push action ${accountaddr} remove '["inita","account11"]' -p inita@active
-        $cleos push action ${accountaddr} remove '["inita","account12"]' -p inita@active
-        $cleos push action ${accountaddr} remove '["initb","account21"]' -p initb@active
-        $cleos push action ${accountaddr} remove '["initb","account22"]' -p initb@active
-        $cleos get table ${accountaddr} inita info
-        $cleos get table ${accountaddr} initb info
-
-
-        $cleos push action ${accountaddr} createupdate '["bigboss11111","contract5111", "https://www.website.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p bigboss11111@active
+        $cleos push action ${accountaddr} remove '["inita"]' -p inita@active
+        $cleos push action ${accountaddr} remove '["initb"]' -p initb@active
+        $cleos get table ${accountaddr} ${accountaddr} info
+        $cleos get table ${accountaddr} ${accountaddr} info
 
     }
     test_update

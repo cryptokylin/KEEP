@@ -16,17 +16,16 @@ public:
     contracts( account_name self ):contract(self){}
 
     /// @abi action
-    void createupdate( account_name    owner,
-                 account_name    contract,
-                 string          website,
-                 string          logo,
-                 string          whitepaper,
-                 string          github,
-                 string          src_zip,
-                 string          memo);
+    void createupdate(account_name contract,
+                     string website,
+                     string logo,
+                     string whitepaper,
+                     string github,
+                     string src_zip,
+                     string memo);
 
     /// @abi action
-    void remove( account_name owner, account_name contract );
+    void remove( account_name contract );
 
 private:
 

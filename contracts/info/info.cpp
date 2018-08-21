@@ -5,8 +5,7 @@
 
 #include "info.hpp"
 
-void contracts::createupdate( account_name    owner,
-                        account_name    contract,
+void contracts::createupdate( account_name    contract,
                         string          website,
                         string          logo,
                         string          whitepaper,
@@ -14,7 +13,7 @@ void contracts::createupdate( account_name    owner,
                         string          src_zip,
                         string          memo) {
 
-    require_auth( owner );
+    require_auth( contract );
 
     eosio_assert( website.size() <= 50, "website has more than 70 bytes" );
     eosio_assert( logo.size() <= 100, "logo url has more than 100 bytes" );
@@ -23,12 +22,12 @@ void contracts::createupdate( account_name    owner,
     eosio_assert( src_zip.size() <= 100, "src_zip url has more than 100 bytes" );
     eosio_assert( memo.size() <= 300, "memo has more than 300 bytes" );
 
-    information info_t( _self, owner);
+    information info_t( _self, _self);
 
     auto existing = info_t.find( contract );
 
     if ( existing == info_t.end()){
-        info_t.emplace( owner, [&]( auto& r ){
+        info_t.emplace( contract, [&]( auto& r ){
             r.contract = contract;
             r.website = website;
             r.logo = logo;
@@ -50,11 +49,11 @@ void contracts::createupdate( account_name    owner,
     }
 }
 
-void contracts::remove( account_name owner, account_name contract ) {
+void contracts::remove( account_name contract ) {
 
-    require_auth( owner );
+    require_auth( contract );
 
-    information info_t( _self, owner);
+    information info_t( _self, _self);
 
     auto existing = info_t.find( contract );
     info_t.erase( existing );
