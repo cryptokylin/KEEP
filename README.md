@@ -65,11 +65,15 @@ src_zip 示例：
 
 示例命令
 ```
-cleos push action contracts111 createupdate '["teamleader11","contract1111",\
+cleos push action cryptokylin1 createupdate '["teamleader11","contract1111",\
     "https://www.website.com", "https://www.website.com/logo.png", \
     "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", \
     "https://www.website.com/src.zip","memo"]' -p teamleader11@active
+    
+cleos get table cryptokylin1 teamleader11 info
 ```
+
+
 
 remove 用于删除一条记录，参数如下 
   
@@ -80,7 +84,7 @@ remove 用于删除一条记录，参数如下
 
 示例命令
 ```
-cleos push action contracts111 remove '["teamleader11","contract1111"]' -p teamleader11@active
+cleos push action cryptokylin1 remove '["teamleader11","contract1111"]' -p teamleader11@active
 ```
 
 ### 2 包含适当的李嘉图合约
