@@ -87,7 +87,7 @@ cleos push action cryptokylin1 remove '["contract1111"]' -p contract1111@active
 ```
 
 5. 项目简介
-项目方需提供`brief.txt`，包含项目简介信息，放到官网的根目录下（例：https://www.website.com/brief.txt），用于公示方展示项目。
+项目方需提供`brief.txt`，包含项目简介信息，放到官网的根目录下（例：`https://www.website.com/brief.txt`），用于公示方展示项目。
 
 ### 2 包含适当的李嘉图合约
 待完善...
