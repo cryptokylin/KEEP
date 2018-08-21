@@ -17,8 +17,9 @@
 说明:
 1. 按照EOS账户命名规则，合约账户长度为1-12个字符，字符范围为a-z,1-5和小数点。  
 2. logo连接用于方便第三方公示网站展示项目logo。  
-3. 合约文件压缩包中除包含c++源文件外，还必须包含一个脚本文件`build.sh`，此脚本文件用于第三方下载此压缩包并解压后，可以快速编译此合约。  
-压缩命令统一为`zip contract.zip ${contract_folder}`，这样第三方可以统一用`unzip ${contract_folder}`命令进行解压。  
+3. 合约文件压缩包中除包含c++源文件外，还必须包含一个脚本文件`build.sh`，此脚本文件用于第三方下载此压缩包并解压后，可以快速编译此合约。
+压缩命令统一为`zip ${contract_folder}.zip ${contract_folder}`，即压缩包名字为合约文件夹名字加".zip"后缀，因此第三方可以统一用`unzip ${contract_folder}.zip`命令进行解压。  
+另外，合约中主cpp文件名需要和合约文件夹同名。  
 为了验证链上wasm文件是对应的c++源文件编译得到的，在build.sh中必须使用docker进行编译，我们建议统一使用镜像 `eosio/eos-dev` 进行编译。  
 build.sh脚本中必须包含`image_name`，`image_version`，`image_id`，以方便第三方进行自动化处理，
 并且 `docker run` 命令中必须使用 `image_id` 指定镜像，不能使用`image_name:image_version`的方式，
@@ -39,7 +40,10 @@ docker run --rm -v `pwd`:/scts ${image_id} bash -c "cd /scts \
 项目方可以将合约文件压缩包放置在 github、自己的官网、IPFS网络，以方便第三方获取并进行验证。
 
 4. 在合约中注册、更新、删除信息
-管理此注册信息的合约账户为contracts111，此合约有两个方法:createupdate 和 remove
+管理此注册信息的合约账户为`cryptokylin1`（EOS主网）。  
+您也可以在Kylin测试网进行测试，Kylin测试网上合约账户是`contracts111`。  
+此合约有两个方法:createupdate 和 remove。  
+
 createupdate 用于创建记录，若记录已存在，则更新该记录，参数如下   
 
 | 名称  | 类型  | 示例  | 限制 | 说明 |
@@ -79,59 +83,13 @@ remove 用于删除一条记录，参数如下
 cleos push action contracts111 remove '["teamleader11","contract1111"]' -p teamleader11@active
 ```
 
-### 2. 通过第三方安全团队的审核
-1. 溢出审计
-2. 权限控制审计
-    - 权限漏洞审计
-    - 权限过大审计
-3. 安全设计审计
-    - 硬编码地址安全
-    - 显现编码安全
-    - 异常校验审计
-    - 类型安全审计
-4. 性能优化审计
-5. 设计逻辑审计
+### 2 包含适当的李嘉图合约
 
-### 3. resign权限  
-
-项目方自行决定是否resign权限，以及将权限resign给谁。 
-
-#### 3.1 完全放弃修改权限
-
-如果想彻底放弃升级权限，则resign权限给 EOS1111111111111111111111111111111114T1Anm，命令如下:
-``` 
-cleos push action eosio updateauth '{"account": "${account}", "permission": "active", "parent": "owner",\
-    "auth":{"threshold": 1, "keys": [{"key":"EOS1111111111111111111111111111111114T1Anm","weight":1}], \
-    "waits": [], "accounts": []}}' -p ${account}@active
-    
-cleos push action eosio updateauth '{"account": "${account}", "permission": "owner", "parent": "",\
-    "auth":{"threshold": 1, "keys": [{"key":"EOS1111111111111111111111111111111114T1Anm","weight":1}], \
-    "waits": [], "accounts": []}}' -p ${account}@owner      
-```
-
-#### 3.2 把修改权限交给producer
-
-```
-// 操作方式：略
-```
-
-
-
-### 4. 接口规范
-
-目前接口规范正在逐步制定中，我们也真诚希望任何对此感兴趣的开发者贡献力量，如下是部分接口规范。
-
-[token类合约接口规范](https://github.com/cryptokylin/KEEP/blob/master/interfaces/token.md)
-
-
-
-### 5. 李嘉图合约
-
-#### 5.1 概述
+#### 2.1 概述
 
 重要性：
 
-#### 5.2 样本
+#### 2.2 样本
 
 [Hello Ricardian Contract](https://github.com/EOSIO/eos/blob/master/contracts/hello/hello_rc.md)
 
@@ -181,15 +139,62 @@ cleos push action eosio updateauth '{"account": "${account}", "permission": "own
 
 
 
-#### 5. 3 权力和义务
+#### 2.3 权力和义务
 
 若在智能合约中包含李嘉图合约，否则默认会执行当前版本的宪法
 
-#### 5.4 相关资料
+#### 2.4 相关资料
 
 若想更多了解李嘉图合约，可参考有EOShenzhen翻译的相关材料:
 
 [关于李嘉图协议的hello合约](shorturl.at/biGM9)
+
+
+
+### 3. 通过第三方安全团队的审核
+1. 溢出审计
+2. 权限控制审计
+    - 权限漏洞审计
+    - 权限过大审计
+3. 安全设计审计
+    - 硬编码地址安全
+    - 显现编码安全
+    - 异常校验审计
+    - 类型安全审计
+4. 性能优化审计
+5. 设计逻辑审计
+
+
+
+### 4. resign权限  
+项目方自行决定是否resign权限，以及将权限resign给谁。 
+
+#### 4.1 完全放弃修改权限
+
+如果想彻底放弃升级权限，则resign权限给 EOS1111111111111111111111111111111114T1Anm，命令如下:
+``` 
+cleos push action eosio updateauth '{"account": "${account}", "permission": "active", "parent": "owner",\
+    "auth":{"threshold": 1, "keys": [{"key":"EOS1111111111111111111111111111111114T1Anm","weight":1}], \
+    "waits": [], "accounts": []}}' -p ${account}@active
+    
+cleos push action eosio updateauth '{"account": "${account}", "permission": "owner", "parent": "",\
+    "auth":{"threshold": 1, "keys": [{"key":"EOS1111111111111111111111111111111114T1Anm","weight":1}], \
+    "waits": [], "accounts": []}}' -p ${account}@owner      
+```
+
+#### 4.2 把修改权限交给producer
+
+```
+// 操作方式：略
+```
+
+
+
+### 5. 接口规范
+
+目前接口规范正在逐步制定中，我们也真诚希望任何对此感兴趣的开发者贡献力量，如下是部分接口规范。
+
+[token类合约接口规范](https://github.com/cryptokylin/KEEP/blob/master/interfaces/token.md)
 
 
 
