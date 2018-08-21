@@ -19,6 +19,7 @@
 2. logo连接用于方便第三方公示网站展示项目logo。  
 3. 合约文件压缩包中除包含c++源文件外，还必须包含一个脚本文件`build.sh`，此脚本文件用于第三方下载此压缩包并解压后，可以快速编译此合约。
 压缩命令统一为`zip ${contract_folder}.zip ${contract_folder}`，即压缩包名字为合约文件夹名字加".zip"后缀，因此第三方可以统一用`unzip ${contract_folder}.zip`命令进行解压。  
+另外，合约中主cpp文件名需要和合约文件夹同名。  
 为了验证链上wasm文件是对应的c++源文件编译得到的，在build.sh中必须使用docker进行编译，我们建议统一使用镜像 `eosio/eos-dev` 进行编译。  
 build.sh脚本中必须包含`image_name`，`image_version`，`image_id`，以方便第三方进行自动化处理，
 并且 `docker run` 命令中必须使用 `image_id` 指定镜像，不能使用`image_name:image_version`的方式，
