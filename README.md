@@ -39,7 +39,7 @@ docker run --rm -v `pwd`:/scts ${image_id} bash -c "cd /scts \
 
 项目方可以将合约文件压缩包放置在 github、自己的官网、IPFS网络，以方便第三方获取并进行验证。
 
-4. 在合约中注册、更新、删除信息
+4. 在合约中注册、更新、删除信息  
 管理此注册信息的合约账户为`cryptokylin1`（EOS主网）。  
 您也可以在Kylin测试网进行测试，Kylin测试网上合约账户是`contracts111`。  
 此合约有两个方法:createupdate 和 remove。  
