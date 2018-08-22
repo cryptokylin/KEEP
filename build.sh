@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+ROOT_DIR=`pwd`
 
 #set -x
 # step 1: init

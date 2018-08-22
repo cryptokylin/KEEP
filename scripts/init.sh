@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-ROOT_DIR='/Users/song/Home/Golang/src/github.com/cryptokylin/KEEP/'
+if [ "${ROOT_DIR}" == "" ];then
+    echo "ERROR! Set ROOT_DIR first please."
+fi
 
 IMAGE_OFFICAL='eosio/eos'
 IMAGE_MAINNET='eoslaomao/eos:mainnet-1.1.1'

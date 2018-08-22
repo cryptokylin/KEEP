@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+ROOT_DIR=`pwd`
 
 # step 1: init
 . scripts/init.sh

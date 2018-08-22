@@ -1,7 +1,5 @@
 
 
-before run test.sh, set ROOT_DIR in scripts/init.sh to be the project's absolute root path. 
-
 test commands
 ``` 
 . test.sh           # boot a local chain, build and deploy the contract
