@@ -71,8 +71,7 @@ cleos push action cryptokylin1 createupdate '["contract1111",\
     "https://www.website.com/src.zip","memo"]' -p contract1111@active
     
 # get registered contract information.   
-ctr=contract1111
-cleos get table cryptokylin1 cryptokylin1 info | jq " .rows[]|select(.contract==\"${ctr}\")"
+cleos get table cryptokylin1 cryptokylin1 info -L contract1111
 ```
 
 remove 用于删除一条记录，参数如下 
