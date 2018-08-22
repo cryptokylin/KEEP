@@ -53,14 +53,9 @@ createupdate 用于创建记录，若记录已存在，则更新该记录，参�
 | logo      | string  | `https://www.website.com/logo.png`        | <=100个字符 |  |
 | whitepaper| string  | `https://www.website.com/whitepaper.pdf`  | <=100个字符 |  |
 | github    | string  | `https://github.com/repo/project`         | <=100个字符 |  |
-| src_zip   | string  | 见下文                                     | <=100个字符 |  |
+| src_zip   | string  | `QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7` | <=100个字符 |  |
 | memo      | string  |                                           | <=300个字符 | 一段文字 |
 
-
-src_zip 示例：  
-如果压缩包在官网: `例如: https://www.website.com/src.zip`  
-如果在github，则需要注意是raw文件地址: `例如: https://raw.githubusercontent.com/account/repo/master/src.zip`  
-如果再IPFS网络:`例如: QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7`  
 
 示例命令
 ```
@@ -68,7 +63,7 @@ src_zip 示例：
 cleos push action cryptokylin1 createupdate '["contract1111",\
     "https://www.website.com", "https://www.website.com/logo.png", \
     "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", \
-    "https://www.website.com/src.zip","memo"]' -p contract1111@active
+    "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p contract1111@active
     
 # get registered contract information.   
 cleos get table cryptokylin1 cryptokylin1 info -L contract1111
