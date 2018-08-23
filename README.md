@@ -97,6 +97,19 @@ cleos push action cryptokylin1 remove '["contract1111"]' -p contract1111@active
 
 定义什么程度的成员才是开发人员。设定开发人员有义务提供许可证、李嘉图合约（一个或多个），并为他们的开发软件任命一个仲裁法庭。
 
+> [Article VII - Open Source](https://github.com/EOS-Mainnet/governance/blob/master/eosio.system/eosio.system-clause-constitution-rc.md#article-vii---open-source)
+
+>  **Article VII - Open Source**
+
+>  Each Member who makes available a smart contract on this blockchain shall be a Developer. Each Developer shall offer their smart contracts via a free and open source license, and each smart contract shall be documented with a Ricardian Contract stating the intent of all parties and naming the Arbitration Forum that will resolve disputes arising from that contract.
+>
+>
+>
+>
+
+**第七条 - 开源**
+
+每个在此区块链上提供智能合约的成员均为开发人员，每个开发者都应提供免费的，开源的许可证的智能合约，每份智能合约应记录在一分描述各方意图的李嘉图协议中，名命名仲裁论坛来解决合同引起的争议
 
 
 **李嘉图协议使用过程**
