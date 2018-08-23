@@ -93,7 +93,7 @@ cleos push action cryptokylin1 remove '["contract1111"]' -p contract1111@active
 > *Defines when a Member is a Developer. Establishes obligation of a Developer to provide a License and one or more Ricardian Contracts, and to name an Arbitration Forum for their software.*
 > 
 
-目的
+**目的**
 
 定义什么程度的成员才是开发人员。设定开发人员有义务提供许可证、李嘉图合约（一个或多个），并为他们的开发软件任命一个仲裁法庭。
 
