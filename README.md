@@ -84,7 +84,7 @@ cleos push action cryptokylin1 remove '["contract1111"]' -p contract1111@active
 
 #### 2.1 概述
 
-重要性：
+**重要性：**
 
 [Thomas Cox：第XI条 - EOS.IO宪法草案 - 开发者和智能合同许可](https://forums.eosgo.io/discussion/747/article-xi-v0-3-0-draft-eos-io-constitution-developers-and-smart-contract-licenses)
 
@@ -98,6 +98,12 @@ cleos push action cryptokylin1 remove '["contract1111"]' -p contract1111@active
 定义什么程度的成员才是开发人员。设定开发人员有义务提供许可证、李嘉图合约（一个或多个），并为他们的开发软件任命一个仲裁法庭。
 
 
+
+**李嘉图协议使用过程**
+
+参考：[ What is a Ricardian Contract? eosio.stackexchange ](https://eosio.stackexchange.com/questions/1054/what-is-a-ricardian-contract/1064)
+
+![](https://i.imgur.com/2J2Lqoy.png)
 
 
 http://iang.org/papers/ricardian_contract.html
