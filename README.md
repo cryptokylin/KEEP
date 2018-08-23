@@ -86,6 +86,22 @@ cleos push action cryptokylin1 remove '["contract1111"]' -p contract1111@active
 
 重要性：
 
+[Thomas Cox：第XI条 - EOS.IO宪法草案 - 开发者和智能合同许可](https://forums.eosgo.io/discussion/747/article-xi-v0-3-0-draft-eos-io-constitution-developers-and-smart-contract-licenses)
+
+> **Purpose**
+>
+> *Defines when a Member is a Developer. Establishes obligation of a Developer to provide a License and one or more Ricardian Contracts, and to name an Arbitration Forum for their software.*
+> 
+
+目的
+
+定义什么程度的成员才是开发人员。设定开发人员有义务提供许可证、李嘉图合约（一个或多个），并为他们的开发软件任命一个仲裁法庭。
+
+
+
+
+http://iang.org/papers/ricardian_contract.html
+
 #### 2.2 样本
 
 [Hello Ricardian Contract](https://github.com/EOSIO/eos/blob/master/contracts/hello/hello_rc.md)
@@ -182,7 +198,9 @@ cleos push action eosio updateauth '{"account": "${account}", "permission": "own
 #### 4.2 把修改权限交给producer
 
 ```
-// 操作方式：略
+cleos set account permission $CONTRACT active '{ "threshold": 1, "keys": [{ "key": "$PUBLIC_KEY_OF_CONTRACT", "weight": 1 }], "accounts": [{ "permission": { "actor":"$CONTRACT","permission":"eosio.prods" }, "weight":1 }] }' active -p $CONTRACT
+
+cleos set account permission $CONTRACT owner '{ "threshold": 1, "keys": [{ "key": "$PUBLIC_KEY_OF_CONTRACT", "weight": 1 }], "accounts": [{ "permission": { "actor":"$CONTRACT","permission":"eosio.prods" }, "weight":1 }] }' owner -p $CONTRACT
 ```
 
 
