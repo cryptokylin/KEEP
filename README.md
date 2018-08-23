@@ -97,9 +97,11 @@ cleos push action cryptokylin1 remove '["contract1111"]' -p contract1111@active
 
 定义什么程度的成员才是开发人员。设定开发人员有义务提供许可证、李嘉图合约（一个或多个），并为他们的开发软件任命一个仲裁法庭。
 
-> [Article VII - Open Source](https://github.com/EOS-Mainnet/governance/blob/master/eosio.system/eosio.system-clause-constitution-rc.md#article-vii---open-source)
 
->  **Article VII - Open Source**
+
+> [Article VII - Open Source]
+
+>  **Article VII - Open Source]((https://github.com/EOS-Mainnet/governance/blob/master/eosio.system/eosio.system-clause-constitution-rc.md#article-vii---open-source))**
 
 >  Each Member who makes available a smart contract on this blockchain shall be a Developer. Each Developer shall offer their smart contracts via a free and open source license, and each smart contract shall be documented with a Ricardian Contract stating the intent of all parties and naming the Arbitration Forum that will resolve disputes arising from that contract.
 >
@@ -134,15 +136,13 @@ http://iang.org/papers/ricardian_contract.html
       "body": "违约。下列任何一项的发生均构成本合同项下的重大违约: \n\n"
     },{
       "id": "补救措施",
-      "body": "补救措施。除依法享有的任何和所有其他权利外，如果一方因未充分履行本合同的任何条款、期限或条件而违约，另一方可以向违约方发出书面通知，终止本合同。本通知应充分详细说明违约的性质。收到该通知的一方应立即被解除该合同，本合同自动终止。
-
- \n  \n"
+      "body": "补救措施。除依法享有的任何和所有其他权利外，如果一方因未充分履行本合同的任何条款、期限或条件而违约，另一方可以向违约方发出书面通知，终止本合同。本通知应充分详细说明违约的性质。收到该通知的一方应立即被解除该合同，本合同自动终止。\n\n"
     },{
       "id": "不可抗力",
       "body": "不可抗力。如果本合同或本合同项下的任何义务因任何一方无法合理控制的原因而被阻止、限制或干扰(“不可抗力”)，如果一方未能履行其义务，另一方立即书面通知该等事件，则该条款援引的一方的义务应在该事件所必要的范围内暂停。“不可抗力”一词应包括但不限于上帝、火灾、爆炸、故意破坏、风暴或其他类似的事件、命令或军事或民事当局行为，或国家紧急情况、叛乱、暴动或战争、罢工、停工、停工或供应失败。被免除方应在情况下采取合理努力，避免或消除不履行的原因，并在消除或停止不履行的情况下，以合理的速度进行履行。如果一方或其雇员、官员、代理人或关联方犯下、遗漏或造成的行为或不作为，应被视为在该方的合理控制范围内。 \n  \n"
     },{
       "id": "纠纷解决",
-      "body": "解决争议的方式。因本合同而产生的或与本合同有关的任何争议或异议，均由本协议规定的EOS.IO Blockchain规则进行仲裁解决。仲裁员的裁决是终局的，任何有适当管辖权的法院都可以作出判决。 \n  \n"
+      "body": "解决争议的方式。因本合同而产生的或与本合同有关的任何争议或异议，均由本协议规定的EOS.IO Blockchain规则进行仲裁解决。仲裁员的裁决是终局的，任何有适当管辖权的法院都可以作出判决。\n\n"
     },{
       "id": "整个协议",
       "body": "整个协议。本合同包含双方的全部协议，无论任何其他协议，不论是口头的还是书面的及其他承诺或条件。本合同取代双方之前的任何书面或口头协议。 \n\n"
@@ -164,10 +164,13 @@ http://iang.org/papers/ricardian_contract.html
       "body": "放弃合同权利。任何一方未能执行本合同的任何条款，不应被解释为放弃或限制该方随后执行并强制严格遵守本合同各项条款的权利。 \n\n"
     },{
       "id": "仲裁员对胜诉方的费用",
-      "body": "仲裁员向胜诉方支付的费用。在本协议项下产生的任何诉讼或与本协议有效性有关的任何单独诉讼中，双方应支付仲裁初始成本的一半，胜诉方应获得合理的仲裁员费用和成本。\n  \n"
+      "body": "仲裁员向胜诉方支付的费用。在本协议项下产生的任何诉讼或与本协议有效性有关的任何单独诉讼中，双方应支付仲裁初始成本的一半，胜诉方应获得合理的仲裁员费用和成本。\n \n"
     },{
       "id": "结构和解释",
       "body": "结构和解释。要求对drafter进行构造或解释的规则被取消。该文件应视为双方共同起草的文件。 \n  \n"
+    },{
+        "id": "纠纷解决",
+        "body": "因本合同引起的或与本合同有关的任何争议，应根据EOS核心仲裁论坛的争议解决规则，由一名或多名根据EOS章程规则指定的仲裁员最终解决。 \n \n"
     }
   ],
 ```
