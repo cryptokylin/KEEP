@@ -99,15 +99,11 @@ cleos push action cryptokylin1 remove '["contract1111"]' -p contract1111@active
 
 
 
-> [Article VII - Open Source]
 
->  **Article VII - Open Source]((https://github.com/EOS-Mainnet/governance/blob/master/eosio.system/eosio.system-clause-constitution-rc.md#article-vii---open-source))**
+>  **[Article VII - Open Source](https://github.com/EOS-Mainnet/governance/blob/master/eosio.system/eosio.system-clause-constitution-rc.md#article-vii---open-source)**
 
 >  Each Member who makes available a smart contract on this blockchain shall be a Developer. Each Developer shall offer their smart contracts via a free and open source license, and each smart contract shall be documented with a Ricardian Contract stating the intent of all parties and naming the Arbitration Forum that will resolve disputes arising from that contract.
->
->
->
->
+
 
 **第七条 - 开源**
 
