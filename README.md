@@ -55,7 +55,7 @@ createupdate 用于创建记录，若记录已存在，则更新该记录，参�
 | github      | string  | `https://github.com/repo/project`                   | required, 100 char max |  |
 | white_paper | string  | `QmdjFPtN93VkrCVsQ8YuAeubUCPKx8sozDzoCPsbVycRZC`    | required, == 46 char   |  |
 | src_zip     | string  | `QmV6EiBVyFCXSM3FJqRVJrQwUxLE5fwDjydusbxxJgQcj9`    | required, == 46 char   |  |
-| extension   | string  | `{telegram:"...",steemit:"...",twitter:"...",...}`  | optional, 500 char max |  |
+| extension   | string  | see below       | optional, 500 char max |  |
 
 
 extension 字段是一个json字符串，用于包含额外信息，项目方应尽量提供以下信息：
