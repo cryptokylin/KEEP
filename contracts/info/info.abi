@@ -20,11 +20,11 @@
           "type": "string"
         },
         {
-          "name": "logo",
+          "name": "logo_256",
           "type": "string"
         },
         {
-          "name": "whitepaper",
+          "name": "brief_intro",
           "type": "string"
         },
         {
@@ -32,12 +32,20 @@
           "type": "string"
         },
         {
+          "name": "white_paper",
+          "type": "string"
+        },
+        {
           "name": "src_zip",
           "type": "string"
         },
         {
-          "name": "memo",
+          "name": "extension",
           "type": "string"
+        },
+        {
+          "name": "version",
+          "type": "uint32"
         }
       ]
     },
@@ -54,11 +62,11 @@
           "type": "string"
         },
         {
-          "name": "logo",
+          "name": "logo_256",
           "type": "string"
         },
         {
-          "name": "whitepaper",
+          "name": "brief_intro",
           "type": "string"
         },
         {
@@ -66,11 +74,15 @@
           "type": "string"
         },
         {
+          "name": "white_paper",
+          "type": "string"
+        },
+        {
           "name": "src_zip",
           "type": "string"
         },
         {
-          "name": "memo",
+          "name": "extension",
           "type": "string"
         }
       ]

@@ -5,22 +5,24 @@
 
 #include "info.hpp"
 
-void contracts::createupdate( account_name    contract,
-                        string          website,
-                        string          logo,
-                        string          whitepaper,
-                        string          github,
-                        string          src_zip,
-                        string          memo) {
+void contracts::createupdate( account_name contract,
+                              string website,
+                              string logo_256,
+                              string brief_intro,
+                              string github,
+                              string white_paper,
+                              string src_zip,
+                              string extension) {
 
     require_auth( contract );
 
-    eosio_assert( website.size() <= 50, "website has more than 70 bytes" );
-    eosio_assert( logo.size() <= 100, "logo url has more than 100 bytes" );
-    eosio_assert( whitepaper.size() <= 100, "whitepaper url has more than 100 bytes" );
+    eosio_assert( website.size() <= 100, "website has more than 100 bytes" );
+    eosio_assert( logo_256.size() <= 100, "logo url has more than 100 bytes" );
+    eosio_assert( brief_intro.size() <= 500, "brief_intro has more than 500 bytes" );
     eosio_assert( github.size() <= 100, "github url has more than 100 bytes" );
-    eosio_assert( src_zip.size() <= 100, "src_zip url has more than 100 bytes" );
-    eosio_assert( memo.size() <= 300, "memo has more than 300 bytes" );
+    eosio_assert( white_paper.size() == 46, "white_paper ipfs address must be 46 bytes" );
+    eosio_assert( src_zip.size() == 46, "src_zip ipfs address must be 46 bytes" );
+    eosio_assert( extension.size() <= 500, "extension has more than 500 bytes" );
 
     information info_t( _self, _self);
 
@@ -30,21 +32,24 @@ void contracts::createupdate( account_name    contract,
         info_t.emplace( contract, [&]( auto& r ){
             r.contract = contract;
             r.website = website;
-            r.logo = logo;
-            r.whitepaper = whitepaper;
+            r.logo_256 = logo_256;
+            r.brief_intro = brief_intro;
             r.github = github;
+            r.white_paper = white_paper;
             r.src_zip = src_zip;
-            r.memo = memo;
+            r.extension = extension;
+            r.version = 1;
         });
     } else{
         info_t.modify( existing, 0, [&]( auto& r ) {
-            r.contract = contract;
             r.website = website;
-            r.logo = logo;
-            r.whitepaper = whitepaper;
+            r.logo_256 = logo_256;
+            r.brief_intro = brief_intro;
             r.github = github;
+            r.white_paper = white_paper;
             r.src_zip = src_zip;
-            r.memo = memo;
+            r.extension = extension;
+            r.version += 1;
         });
     }
 }

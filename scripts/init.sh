@@ -54,7 +54,7 @@ create_account_and_import_key(){
 new_account(){
     account=$1
 
-    str=`cleos create key`
+    str=`$cleos create key`
     pri_key=`echo $str | cut -d' ' -f 3`
     pub_key=`echo $str | cut -d' ' -f 6`
 

@@ -44,40 +44,51 @@ docker run --rm -v `pwd`:/scts ${image_id} bash -c "cd /scts \
 您也可以在Kylin测试网进行测试，Kylin测试网上合约账户是`contracts111`。  
 此合约有两个方法:createupdate 和 remove。  
 
-createupdate 用于创建记录，若记录已存在，则更新该记录，参数有两个字段，如下   
-
--- field one --
+createupdate 用于创建记录，若记录已存在，则更新该记录，参数如下：   
 
 | name  | type  | example  | limit | notes |
 |---|---|---|---|---|
-| contract  | account_name  | contract1111                                  | 12 char max |  |
+| contract    | account_name  | `contract1111`                                | required               |  |
+| website     | string  | `https://www.website.com`                           | required, 100 char max |  |
+| logo_256    | string  | `https://www.website.com/logo_256.png`              | required, 100 char max |  |
+| brief_intro | string  | `project's brief introduction`			          | required, 500 char max |  |
+| github      | string  | `https://github.com/repo/project`                   | required, 100 char max |  |
+| white_paper | string  | `QmdjFPtN93VkrCVsQ8YuAeubUCPKx8sozDzoCPsbVycRZC`    | required, == 46 char   |  |
+| src_zip     | string  | `QmV6EiBVyFCXSM3FJqRVJrQwUxLE5fwDjydusbxxJgQcj9`    | required, == 46 char   |  |
+| extension   | string  | `{telegram:"...",steemit:"...",twitter:"...",...}`  | optional, 500 char max |  |
 
--- field two --
 
-| name  | type  | example  | limit | notes |
-|---|---|---|---|---|
-| contract  | account_name  | contract1111                                  | required |  |
-| website   | string  | `https://www.website.com`                           | required |  |
-| logo_256  | string  | `https://www.website.com/logo.png`                  | required |  |
-| whitepaper| string  | `QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7`    | required |  |
-| brief 	| string  | `project brief introduction`			            | required |  |
-| github    | string  | `https://github.com/repo/project`                   | required |  |
-| src_zip   | string  | `QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7`    | required |  |
-| telegram 	| string  | `https://t.me/cryptokylin`				            | optional |  |
-| steemit 	| string  | `https://steemit.com/@eosio`			            | optional |  |
-| twitter 	| string  | `https://twitter.com/EOS_io`		                | optional |  |
-| wechat 	| string  | `EOSIO-foo`				  			                | optional |  |
-| memo      | string  | `memo`                                              | optional |  |
+extension 字段是一个json字符串，用于包含额外信息，项目方应尽量提供以下信息：
+
+| name  |  example  |  notes |
+|---|---|---|
+| telegram 	| `https://t.me/cryptokylin`		     |  |
+| steemit 	| `https://steemit.com/@eosio`	         |  |
+| twitter 	| `https://twitter.com/EOS_io`	         |  |
+| wechat 	| `EOSIO-foo`				  		     |  |
 
 
 示例命令
 ```
 # register project contract information to cryptokylin1
-cleos push action cryptokylin1 createupdate '["contract1111",\
-    "https://www.website.com", "https://www.website.com/logo.png", \
-    "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", \
-    "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p contract1111@active
-    
+
+contract=contract1111
+website=https://www.website.com
+logo_256=https://www.website.com/logo_256.png
+brief_intro="brief intro"
+github="https://github.com/repo/project"
+white_paper="QmdjFPtN93VkrCVsQ8YuAeubUCPKx8sozDzoCPsbVycRZC"
+src_zip="QmV6EiBVyFCXSM3FJqRVJrQwUxLE5fwDjydusbxxJgQcj9"
+telegram="https://t.me/cryptokylin"
+steemit=https://steemit.com/@eosio
+twitter="https://twitter.com/EOS_io"
+wechat="EOSIO-foo"
+
+extension="telegram=${telegram}|steemit=${steemit}|twitter=${twitter}|wechat=${wechat}"
+str="[ \"${contract}\",\"${website}\",\"${logo_256}\",\"${brief_intro}\",\"${github}\",\"${white_paper}\",\"${src_zip}\",\"${extension}\" ]"
+
+cleos push action ${accountaddr} createupdate "$str" -p contract1111@active
+
 # get registered contract information.   
 cleos get table cryptokylin1 cryptokylin1 info -L contract1111
 ```

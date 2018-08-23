@@ -24,7 +24,7 @@ fi
 
 # step 4: build, modify abi file and deploy contract.
 if [[ "${action}" == "" || "${action}" == "deploy" ]]; then
-    . ./build.sh
+#    . ./build.sh
     $cleos set contract  ${accountaddr} /mycts/${contract} -p ${accountaddr}
 fi
 
@@ -33,18 +33,41 @@ if [ "${action}" == 'test' ]; then
     set -x
 
     test_update(){
-        $cleos push action ${accountaddr} createupdate '["inita", "https://www.website-a1.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p inita@active
-        $cleos push action ${accountaddr} createupdate '["inita", "https://www.website-a2.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p inita@active
-        $cleos push action ${accountaddr} createupdate '["initb", "https://www.website-b1.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p initb@active
-        $cleos push action ${accountaddr} createupdate '["initb", "https://www.website-b2.com", "https://www.website.com/logo.png", "https://www.website.com/whitepaper.pdf","https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","memo"]' -p initb@active
+        $cleos push action ${accountaddr} createupdate '["inita", "https://www.website-a1.com", "https://www.website.com/logo.png", "brief intro" ,"https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","{telegram:\"telegram-add\",steemit:\"steemit-add\",twitter:\"twitter-add\"}"]' -p inita@active
+        $cleos push action ${accountaddr} createupdate '["initb", "https://www.website-b1.com", "https://www.website.com/logo.png", "brief intro" ,"https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","{telegram:\"telegram-add\",steemit:\"steemit-add\",twitter:\"twitter-add\"}"]' -p initb@active
+
         $cleos get table ${accountaddr} ${accountaddr} info
+
+        $cleos push action ${accountaddr} createupdate '["inita", "https://www.website-a2.com", "https://www.website.com/logo.png", "brief intro" ,"https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","{telegram:\"telegram-add\",steemit:\"steemit-add\",twitter:\"twitter-add\"}"]' -p inita@active
+        $cleos push action ${accountaddr} createupdate '["initb", "https://www.website-b2.com", "https://www.website.com/logo.png", "brief intro" ,"https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","{telegram:\"telegram-add\",steemit:\"steemit-add\",twitter:\"twitter-add\"}"]' -p initb@active
+
         $cleos get table ${accountaddr} ${accountaddr} info
 
 
         $cleos push action ${accountaddr} remove '["inita"]' -p inita@active
         $cleos push action ${accountaddr} remove '["initb"]' -p initb@active
         $cleos get table ${accountaddr} ${accountaddr} info
-        $cleos get table ${accountaddr} ${accountaddr} info
+
+        
+        contract=inita
+        website=https://www.website-a1.com
+        logo_256=https://www.website.com/logo.png
+        brief_intro="brief intro"
+        github="https://github.com/repo/project"
+        white_paper="QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7"
+        src_zip="QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7"
+
+        telegram="https://t.me/cryptokylin"
+        steemit=https://steemit.com/@eosio
+        twitter="https://twitter.com/EOS_io"
+        wechat="EOSIO-foo"
+
+        extension="telegram=${telegram}|steemit=${steemit}|twitter=${twitter}|wechat=${wechat}"
+
+        str="[ \"${contract}\",\"${website}\",\"${logo_256}\",\"${brief_intro}\",\"${github}\",\"${white_paper}\",\"${src_zip}\",\"${extension}\" ]"
+
+        $cleos push action ${accountaddr} createupdate "$str" -p inita@active
+
 
     }
     test_update
