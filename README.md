@@ -127,44 +127,47 @@ http://iang.org/papers/ricardian_contract.html
 
 ```
 "ricardian_clauses": [{
-      "id": "Warranty",
-      "body": "WARRANTY. The invoker of the contract action shall uphold its Obligations under this Contract in a timely and workmanlike manner, using knowledge and recommendations for performing the services which meet generally acceptable standards set forth by EOS.IO Blockchain Block Producers.\n\n"
+      "id": "保修",
+      "body": "保修.保修。本合同的调用方应及时、熟练地履行本合同项下的义务，EOS.IO 的Blockchain Block Producers应当运用知识和建议来执行符合EOS规定的普遍可接受的服务标准。\n\n"
     },{
-      "id": "Default",
-      "body": "DEFAULT. The occurrence of any of the following shall constitute a material default under this Contract: \n\n"
+      "id": "名称",
+      "body": "违约。下列任何一项的发生均构成本合同项下的重大违约: \n\n"
     },{
-      "id": "Remedies",
-      "body": "REMEDIES. In addition to any and all other rights a party may have available according to law, if a party defaults by failing to substantially perform any provision, term or condition of this Contract, the other party may terminate the Contract by providing written notice to the defaulting party. This notice shall describe with sufficient detail the nature of the default. The party receiving such notice shall promptly be removed from being a Block Producer and this Contract shall be automatically terminated. \n  \n"
+      "id": "补救措施",
+      "body": "补救措施。除依法享有的任何和所有其他权利外，如果一方因未充分履行本合同的任何条款、期限或条件而违约，另一方可以向违约方发出书面通知，终止本合同。本通知应充分详细说明违约的性质。收到该通知的一方应立即被解除该合同，本合同自动终止。
+
+ \n  \n"
     },{
-      "id": "Force Majeure",
-      "body": "FORCE MAJEURE. If performance of this Contract or any obligation under this Contract is prevented, restricted, or interfered with by causes beyond either party's reasonable control (\"Force Majeure\"), and if the party unable to carry out its obligations gives the other party prompt written notice of such event, then the obligations of the party invoking this provision shall be suspended to the extent necessary by such event. The term Force Majeure shall include, without limitation, acts of God, fire, explosion, vandalism, storm or other similar occurrence, orders or acts of military or civil authority, or by national emergencies, insurrections, riots, or wars, or strikes, lock-outs, work stoppages, or supplier failures. The excused party shall use reasonable efforts under the circumstances to avoid or remove such causes of non-performance and shall proceed to perform with reasonable dispatch whenever such causes are removed or ceased. An act or omission shall be deemed within the reasonable control of a party if committed, omitted, or caused by such party, or its employees, officers, agents, or affiliates. \n  \n"
+      "id": "不可抗力",
+      "body": "不可抗力。如果本合同或本合同项下的任何义务因任何一方无法合理控制的原因而被阻止、限制或干扰(“不可抗力”)，如果一方未能履行其义务，另一方立即书面通知该等事件，则该条款援引的一方的义务应在该事件所必要的范围内暂停。“不可抗力”一词应包括但不限于上帝、火灾、爆炸、故意破坏、风暴或其他类似的事件、命令或军事或民事当局行为，或国家紧急情况、叛乱、暴动或战争、罢工、停工、停工或供应失败。被免除方应在情况下采取合理努力，避免或消除不履行的原因，并在消除或停止不履行的情况下，以合理的速度进行履行。如果一方或其雇员、官员、代理人或关联方犯下、遗漏或造成的行为或不作为，应被视为在该方的合理控制范围内。 \n  \n"
     },{
-      "id": "Dispute Resolution",
-      "body": "DISPUTE RESOLUTION. Any controversies or disputes arising out of or relating to this Contract will be resolved by binding arbitration under the default rules set forth by the EOS.IO Blockchain. The arbitrator's award will be final, and judgment may be entered upon it by any court having proper jurisdiction. \n  \n"
+      "id": "纠纷解决",
+      "body": "解决争议的方式。因本合同而产生的或与本合同有关的任何争议或异议，均由本协议规定的EOS.IO Blockchain规则进行仲裁解决。仲裁员的裁决是终局的，任何有适当管辖权的法院都可以作出判决。 \n  \n"
     },{
-      "id": "Entire Agreement",
-      "body": "ENTIRE AGREEMENT. This Contract contains the entire agreement of the parties, and there are no other promises or conditions in any other agreement whether oral or written concerning the subject matter of this Contract. This Contract supersedes any prior written or oral agreements between the parties. \n\n"
+      "id": "整个协议",
+      "body": "整个协议。本合同包含双方的全部协议，无论任何其他协议，不论是口头的还是书面的及其他承诺或条件。本合同取代双方之前的任何书面或口头协议。 \n\n"
     },{
-      "id": "Severability",
-      "body": "SEVERABILITY. If any provision of this Contract will be held to be invalid or unenforceable for any reason, the remaining provisions will continue to be valid and enforceable. If a court finds that any provision of this Contract is invalid or unenforceable, but that by limiting such provision it would become valid and enforceable, then such provision will be deemed to be written, construed, and enforced as so limited. \n\n"
+      "id": "可分割性",
+      "body": "可分割性。如果本合同的任何条款因任何原因被认为无效或不可执行，其余条款将继续有效和可执行。如果法院发现本合同的任何条款无效或不可执行，但通过限制该条款，该条款将变得有效和可执行，那么该条款将被视为书面的、解释性的和有限执行的。\n\n"
     },{
-      "id": "Amendment",
-      "body": "AMENDMENT. This Contract may be modified or amended in writing by mutual agreement between the parties, if the writing is signed by the party obligated under the amendment. \n\n"
+      "id": "修正案",
+      "body": "修正案。本合同经双方协商一致，可以以书面形式修正或修改。\n\n"
     },{
-      "id": "Governing Law",
-      "body": "GOVERNING LAW. This Contract shall be construed in accordance with the Maxims of Equity. \n\n"
+      "id": "适用法律",
+      "body": "适用法律。本合同应按照衡平法原则解释。 \n\n"
     },{
-      "id": "Notice",
-      "body": "NOTICE. Any notice or communication required or permitted under this Contract shall be sufficiently given if delivered to a verifiable email address or to such other email address as one party may have publicly furnished in writing, or published on a broadcast contract provided by this blockchain for purposes of providing notices of this type. \n"
+      "id": "通知",
+      "body": "
+通知。任何通知或通信要求或允许在本合同项下应当充分的可验证的电子邮件地址或递送等其他一方书面公开提供的电子邮件地址,或者通过blockchain发表为提供这种类型的通知在广播合同上。 \n"
     },{
-      "id": "Waiver of Contractual Right",
-      "body": "WAIVER OF CONTRACTUAL RIGHT. The failure of either party to enforce any provision of this Contract shall not be construed as a waiver or limitation of that party's right to subsequently enforce and compel strict compliance with every provision of this Contract. \n\n"
+      "id": "放弃合同权利",
+      "body": "放弃合同权利。任何一方未能执行本合同的任何条款，不应被解释为放弃或限制该方随后执行并强制严格遵守本合同各项条款的权利。 \n\n"
     },{
-      "id": "Arbitrator's Fees to Prevailing Party",
-      "body": "ARBITRATOR'S FEES TO PREVAILING PARTY. In any action arising hereunder or any separate action pertaining to the validity of this Agreement, both sides shall pay half the initial cost of arbitration, and the prevailing party shall be awarded reasonable arbitrator's fees and costs.\n  \n"
+      "id": "仲裁员对胜诉方的费用",
+      "body": "仲裁员向胜诉方支付的费用。在本协议项下产生的任何诉讼或与本协议有效性有关的任何单独诉讼中，双方应支付仲裁初始成本的一半，胜诉方应获得合理的仲裁员费用和成本。\n  \n"
     },{
-      "id": "Construction and Interpretation",
-      "body": "CONSTRUCTION AND INTERPRETATION. The rule requiring construction or interpretation against the drafter is waived. The document shall be deemed as if it were drafted by both parties in a mutual effort. \n  \n"
+      "id": "结构和解释",
+      "body": "结构和解释。要求对drafter进行构造或解释的规则被取消。该文件应视为双方共同起草的文件。 \n  \n"
     }
   ],
 ```
