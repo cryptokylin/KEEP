@@ -44,17 +44,30 @@ docker run --rm -v `pwd`:/scts ${image_id} bash -c "cd /scts \
 您也可以在Kylin测试网进行测试，Kylin测试网上合约账户是`contracts111`。  
 此合约有两个方法:createupdate 和 remove。  
 
-createupdate 用于创建记录，若记录已存在，则更新该记录，参数如下   
+createupdate 用于创建记录，若记录已存在，则更新该记录，参数有两个字段，如下   
 
-| 名称  | 类型  | 示例  | 限制 | 说明 |
+-- field one --
+
+| name  | type  | example  | limit | notes |
 |---|---|---|---|---|
-| contract  | account_name  | contract1111                        | <=12个字符  |部署合约的账户 |
-| website   | string  | `https://www.website.com`                 | <=50个字符  |  |
-| logo      | string  | `https://www.website.com/logo.png`        | <=100个字符 |  |
-| whitepaper| string  | `https://www.website.com/whitepaper.pdf`  | <=100个字符 |  |
-| github    | string  | `https://github.com/repo/project`         | <=100个字符 |  |
-| src_zip   | string  | `QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7` | <=100个字符 |  |
-| memo      | string  |                                           | <=300个字符 | 一段文字 |
+| contract  | account_name  | contract1111                                  | 12 char max |  |
+
+-- field two --
+
+| name  | type  | example  | limit | notes |
+|---|---|---|---|---|
+| contract  | account_name  | contract1111                                  | required |  |
+| website   | string  | `https://www.website.com`                           | required |  |
+| logo_256  | string  | `https://www.website.com/logo.png`                  | required |  |
+| whitepaper| string  | `QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7`    | required |  |
+| brief 	| string  | `project brief introduction`			            | required |  |
+| github    | string  | `https://github.com/repo/project`                   | required |  |
+| src_zip   | string  | `QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7`    | required |  |
+| telegram 	| string  | `https://t.me/cryptokylin`				            | optional |  |
+| steemit 	| string  | `https://steemit.com/@eosio`			            | optional |  |
+| twitter 	| string  | `https://twitter.com/EOS_io`		                | optional |  |
+| wechat 	| string  | `EOSIO-foo`				  			                | optional |  |
+| memo      | string  | `memo`                                              | optional |  |
 
 
 示例命令
