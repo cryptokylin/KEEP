@@ -6,7 +6,7 @@ Token contracts must be open source, if third-party libraries are used, their so
 
 ### 2. `asset` data struct
   - In token contracts, you must use `asset` data structure which defined in [asset.hpp](https://github.com/EOSIO/eos/blob/master/contracts/eosiolib/asset.hpp) to represent user's token. you can't use your custom defined data structure to represent user's token, because this leads to a lot of incompatibility.  
-  - symbol name must be capitalized english alphabet, and should be less than 7 characters.
+  - symbol name must be capitalized english alphabet, and should not be longer than 7 characters.
   
 ### 2. actions
 Token contracts must contain below actions and corresponding parameters:  
