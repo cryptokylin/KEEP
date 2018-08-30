@@ -62,6 +62,7 @@ extension 字段是一个json字符串，用于包含额外信息，项目方应
 
 | name  |  example  |  notes |
 |---|---|---|
+| contract 	| `contractname`		                 |  |
 | telegram 	| `https://t.me/cryptokylin`		     |  |
 | steemit 	| `https://steemit.com/@eosio`	         |  |
 | twitter 	| `https://twitter.com/EOS_io`	         |  |
