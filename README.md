@@ -58,7 +58,7 @@ createupdate 用于创建记录，若记录已存在，则更新该记录，参�
 | extension   | string  | see below       | optional, 500 char max |  |
 
 
-extension 字段是一个json字符串，用于包含额外信息，项目方应尽量提供以下信息：
+extension 字段是一个以`|`分割的包含多个`key=value`的字符串，用于包含附加信息，项目方应尽量提供以下信息：
 
 | name  |  example  |  notes |
 |---|---|---|
