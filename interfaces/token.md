@@ -1,7 +1,11 @@
 
 ## token kind contract interface standard
 
-### 1. actions
+### 1. open source
+Token contracts must be open source, if third-party libraries are used, their source code of the corresponding version must be provided.
+
+
+### 2. actions
 this kind of contracts must contain below actions and corresponding parameters:  
 ``` 
 void transfer( account_name from,
@@ -10,7 +14,7 @@ void transfer( account_name from,
                string       memo );
 ```
 
-### 2. tables
+### 3. tables
 this kind of contracts must contain below tables, 
 and each table must contain at least the corresponding fields and use the same primary_key() listed blow.
 
@@ -33,3 +37,5 @@ struct currency_stats {
 };
 
 ```
+### 4. advice
+It's better that token contracts be independent of business logic contracts. when a business logic contract need token operation, it should send action to token contract's abi interface to transfer token.
