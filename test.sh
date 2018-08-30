@@ -33,13 +33,13 @@ if [ "${action}" == 'test' ]; then
     set -x
 
     test_update(){
-        $cleos push action ${accountaddr} createupdate '["inita", "https://www.website-a1.com", "https://www.website.com/logo.png", "brief intro" ,"https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","{telegram:\"telegram-add\",steemit:\"steemit-add\",twitter:\"twitter-add\"}"]' -p inita@active
-        $cleos push action ${accountaddr} createupdate '["initb", "https://www.website-b1.com", "https://www.website.com/logo.png", "brief intro" ,"https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","{telegram:\"telegram-add\",steemit:\"steemit-add\",twitter:\"twitter-add\"}"]' -p initb@active
+        $cleos push action ${accountaddr} createupdate '["inita", "https://www.website-a1.com", "https://www.website.com/logo.png", "brief intro" ,"https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","key1=value1|key2=value2|key3=value3"]' -p inita@active
+        $cleos push action ${accountaddr} createupdate '["initb", "https://www.website-b1.com", "https://www.website.com/logo.png", "brief intro" ,"https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","key1=value1|key2=value2|key3=value3"]' -p initb@active
 
         $cleos get table ${accountaddr} ${accountaddr} info
 
-        $cleos push action ${accountaddr} createupdate '["inita", "https://www.website-a2.com", "https://www.website.com/logo.png", "brief intro" ,"https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","{telegram:\"telegram-add\",steemit:\"steemit-add\",twitter:\"twitter-add\"}"]' -p inita@active
-        $cleos push action ${accountaddr} createupdate '["initb", "https://www.website-b2.com", "https://www.website.com/logo.png", "brief intro" ,"https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","{telegram:\"telegram-add\",steemit:\"steemit-add\",twitter:\"twitter-add\"}"]' -p initb@active
+        $cleos push action ${accountaddr} createupdate '["inita", "https://www.website-a2.com", "https://www.website.com/logo.png", "brief intro" ,"https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","key1=value1|key2=value2|key3=value3"]' -p inita@active
+        $cleos push action ${accountaddr} createupdate '["initb", "https://www.website-b2.com", "https://www.website.com/logo.png", "brief intro" ,"https://github.com/repo/project", "QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","QmdTg15kLsDzHHPAH5mdyhXTPJoAeuGyYbb8imKc54h6m7","key1=value1|key2=value2|key3=value3"]' -p initb@active
 
         $cleos get table ${accountaddr} ${accountaddr} info
 
