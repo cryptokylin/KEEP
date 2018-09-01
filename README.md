@@ -109,7 +109,7 @@ cleos push action cryptokylin1 remove '["contract1111"]' -p contract1111@active
 
 #### 2.1 概述
 
-**重要性：**
+##### 2.1.1 和宪法的关系
 
 [Thomas Cox：第XI条 - EOS.IO宪法草案 - 开发者和智能合同许可](https://forums.eosgo.io/discussion/747/article-xi-v0-3-0-draft-eos-io-constitution-developers-and-smart-contract-licenses)
 
@@ -134,8 +134,20 @@ cleos push action cryptokylin1 remove '["contract1111"]' -p contract1111@active
 
 每个在此区块链上提供智能合约的成员均为开发人员，每个开发者都应提供免费的，开源的许可证的智能合约，每份智能合约应记录在一分描述各方意图的李嘉图协议中，名命名仲裁论坛来解决合同引起的争议
 
+##### 2.1.2 原理
 
-**李嘉图协议使用过程**
+从法律合同到机器代码
+在，我们将法律合同和机器代码视为一个连续统一体。 在一个极端的法律文本，纯粹用于人类消费，在另一个，计算机可执行机器代码。 在它们之间是不同的表示和抽象，在灵活性，有意模糊性，计算严谨性以及法律或计算机专家的创作和理解的简易性之间进行不同的权衡。
+
+当一个人在连续体中向右移动（朝向链码）时，人们朝着法律文本的结构化表示移动，最终通过编译器到达可以在计算机芯片的中央处理单元（CPU）上执行的机器代码。
+
+李嘉图条款描述了特定行为的预期结果。 它也可用于在发件人和合同之间建立条款。
+
+
+
+
+
+##### 2.1.3 李嘉图协议使用过程
 
 参考：[ What is a Ricardian Contract? eosio.stackexchange ](https://eosio.stackexchange.com/questions/1054/what-is-a-ricardian-contract/1064)
 
@@ -144,18 +156,41 @@ cleos push action cryptokylin1 remove '["contract1111"]' -p contract1111@active
 
 http://iang.org/papers/ricardian_contract.html
 
-#### 2.2 样本
+#### 2.2 格式和样本
 
-[Hello Ricardian Contract](https://github.com/EOSIO/eos/blob/master/contracts/hello/hello_rc.md)
+##### 2.2.1  `ricardian_clauses` 李嘉图条款
+- 位于`合约名.abi`
+- 作为单独的一个第一级对象
+- 作为通用条款，用于指定智能合约相关方的权责
+
+```
+"version": “”,
+"types": [],
+"structs": [],
+"actions": [],
+"ricardian_clauses": [],
+"abi_extensions": []
+```
+
+>  例子: [hello.abi](https://github.com/EOSIO/eos/blob/master/contracts/hello/hello.abi)
 
 ```
 "ricardian_clauses": [{
       "id": "保修",
       "body": "保修.保修。本合同的调用方应及时、熟练地履行本合同项下的义务，EOS.IO 的Blockchain Block Producers应当运用知识和建议来执行符合EOS规定的普遍可接受的服务标准。\n\n"
     },{
-      "id": "名称",
+      "id": "违约",
       "body": "违约。下列任何一项的发生均构成本合同项下的重大违约: \n\n"
     },{
+       "id": "不做恶"
+       "body": "承诺不使用合约漏洞获取利益或损害其他人的合法权益，若发生此类情况，相关方愿意承担相当责任。 \n\n"
+	},{
+       "id": "信息披露"
+       "body": "承诺所有公开披露信息、规则真实可信 \n\n"
+	},{
+       "id": "代码一致"
+       "body": "承诺公开的源码与链上部署的二进制代码保持一致 \n\n"
+	},{
       "id": "补救措施",
       "body": "补救措施。除依法享有的任何和所有其他权利外，如果一方因未充分履行本合同的任何条款、期限或条件而违约，另一方可以向违约方发出书面通知，终止本合同。本通知应充分详细说明违约的性质。收到该通知的一方应立即被解除该合同，本合同自动终止。\n\n"
     },{
@@ -178,29 +213,95 @@ http://iang.org/papers/ricardian_contract.html
       "body": "适用法律。本合同应按照衡平法原则解释。 \n\n"
     },{
       "id": "通知",
-      "body": "
-通知。任何通知或通信要求或允许在本合同项下应当充分的可验证的电子邮件地址或递送等其他一方书面公开提供的电子邮件地址,或者通过blockchain发表为提供这种类型的通知在广播合同上。 \n"
+      "body": "通知。任何通知或通信要求或允许在本合同项下应当充分的可验证的电子邮件地址或递送等其他一方书面公开提供的电子邮件地址,或者通过blockchain发表为提供这种类型的通知在广播合同上。 \n"
     },{
       "id": "放弃合同权利",
       "body": "放弃合同权利。任何一方未能执行本合同的任何条款，不应被解释为放弃或限制该方随后执行并强制严格遵守本合同各项条款的权利。 \n\n"
     },{
       "id": "仲裁员对胜诉方的费用",
-      "body": "仲裁员向胜诉方支付的费用。在本协议项下产生的任何诉讼或与本协议有效性有关的任何单独诉讼中，双方应支付仲裁初始成本的一半，胜诉方应获得合理的仲裁员费用和成本。\n \n"
+      "body": "仲裁员向胜诉方支付的费用。在本协议项下产生的任何诉讼或与本协议有效性有关的任何单独诉讼中，双方应支付仲裁初始成本的一半，胜诉方应获得合理的仲裁员费用和成本。\n\n"
     },{
       "id": "结构和解释",
-      "body": "结构和解释。要求对drafter进行构造或解释的规则被取消。该文件应视为双方共同起草的文件。 \n  \n"
+      "body": "结构和解释。要求对drafter进行构造或解释的规则被取消。该文件应视为双方共同起草的文件。 \n\n"
     },{
-        "id": "纠纷解决",
+        "id": "仲裁规则",
         "body": "因本合同引起的或与本合同有关的任何争议，应根据EOS核心仲裁论坛的争议解决规则，由一名或多名根据EOS章程规则指定的仲裁员最终解决。 \n \n"
     }
   ],
 ```
 
+##### 2.2.2 和action 执行方的约定：`ricardian_contract`
+- 位于`合约名.abi`
+- 作为附属object定义在`actions` 中
+- 用于指定action执行方的的权责
+
+```
+{
+  "name": "XXX", 			//合同中定义的action名称
+  "type": "XXX", 			//ABI中描述的隐式struct的名称
+  "ricardian_contract": "" 	//与此操作关联的可选ricardian 条款，用于描述本action预期的功能。
+}
+```
 
 
-#### 2.3 权力和义务
 
-若在智能合约中包含李嘉图合约，否则默认会执行当前版本的宪法
+##### 2.2.3 `<智能合约名称>-<Action名称>-rc.md`
+
+- markdown形式的单独文件
+- 对 abi中的每一条action的 ricardian_contract，独立创建一个markdown 文档
+
+例子参考：[eosio.wps.regproposer-rc.md](https://github.com/EOS-BP-Developers/wps-backend/blob/master/contracts/eosio.wps/abi/eosio.wps-regproposer-rc.md)
+
+> `{{regproposer}}`行动的目的是将一个帐户登记为向EOS Worker Proposal System提交提案的责任方。
+> 
+> 我，`{{提议者}`，在此证明只提交我个人作为团队成员参与的建议。
+> 
+> 我，`{提议者}}`，同意只提交旨在使EOS生态系统受益的建议。
+> 
+> 我，`{{提议者}}`，承诺提供关于我将提交给EOS工人建议系统的建议的正确和真实的信息。如果我得知我可能在提案中提供了任何不正确的信息，或者如果我提供了任何信息，我将尽快更新该提案，只要我有能力这样做。
+> 
+> 我，`{{提交者}}`，同意并承诺将我的建议可能收到的任何资金分发给有关各方，如我的建议书中所概述的那样。我证明我的建议包括了所有现有利益的有关细节，并声明了任何和所有利益冲突。
+> 
+> 我，`{{提议者}}`，在此证明我提供的关于我自己的信息是准确的。
+> 
+> 我，`{{提议者}}`，同意我在将来提交的任何建议都符合标准提案清单的标准，这是我所知的。
+> 
+> 如果我的建议不符合公开发表的建议清单，同意我的建议可能被否决。
+> 
+> 如果我不满足任何或一些在建议路线图中概述的可交付成果/里程碑，我同意我的建议可能会被否决。
+
+
+
+##### 2.2.4 `<智能合约名称>_rc.md`
+
+参考 [hello_rc.md](https://github.com/EOSIO/eos/blob/master/contracts/hello/hello_rc.md)
+
+- markdown 版本的单独文件 
+- 现行  `ricardian_clauses` 李嘉图条款
+- 每一个智能合约只有一个ricardian_clauses
+
+
+
+#### 2.3 建议文件位置及结构
+
+```
+- <智能合约名称>
+	- include
+    - src
+    - abi
+        - 智能合约.abi
+        - <智能合约名称>_rc.md
+        - <智能合约名称>-<Action名称1>-rc.md
+        - <智能合约名称>-<Action名称2>-rc.md
+        - <智能合约名称>-<Action名称3>-rc.md
+    - CMakeLists.txt
+    - ReadMe.md
+```
+
+> 参考: https://github.com/EOSIO/eosio.contracts
+
+
+
 
 #### 2.4 相关资料
 
