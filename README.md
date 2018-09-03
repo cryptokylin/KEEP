@@ -9,6 +9,7 @@
 - 3 [通过第三方安全团队的审核](#3-%E9%80%9A%E8%BF%87%E7%AC%AC%E4%B8%89%E6%96%B9%E5%AE%89%E5%85%A8%E5%9B%A2%E9%98%9F%E7%9A%84%E5%AE%A1%E6%A0%B8)
 - 4 [resign权限](#4-resign%E6%9D%83%E9%99%90)
 - 5 [接口规范](#5-%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83)
+    - [token合约规范](https://github.com/cryptokylin/KEEP/blob/master/interfaces/token.md)
 
 
 为达到上述目的，合约应满足如下条件（Checklist）：
