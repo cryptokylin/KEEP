@@ -6,7 +6,7 @@ Token contracts must be open source, if third-party libraries are used, their so
 
 ### 2. `asset` data struct
   - In token contracts, you must use `asset` data structure which defined in [asset.hpp](https://github.com/EOSIO/eos/blob/master/contracts/eosiolib/asset.hpp) to represent user's token. you can't use your custom defined data structure to represent user's token, because this leads to a lot of incompatibility.  
-  - symbol name must be capitalized english alphabet, and should not be longer than 7 characters.
+  - symbol name must be uppercase english letters, and should not be longer than 7 characters.
   
 ### 2. actions
 Token contracts must contain below actions and corresponding parameters:  
@@ -46,5 +46,8 @@ and each table must contain at least the corresponding fields and use the same p
   };
 
   ```
-### 4. advice
+### 4. send inline action for various fees
+It is very important that any transaction detail should be queryable on the chain. so if you charge for some operations, such as transaction fee for actiion `transfer`, then you need to send a separate action (such as SEND_INLINE_ACTION) for the fee，only in this way can the transaction details be querying on the chain.
+
+### 5. advice
 It's better that token contracts be independent of business logic contracts. when a business logic contract need token operation, it should send action to token contract's abi interface to transfer token.
