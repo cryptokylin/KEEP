@@ -2,6 +2,15 @@
 
 本文目的是提供EOS智能合约上线流程的最佳实践，促进项目方的智能合约通过各个交易所、钱包、区块链浏览器的认可并公示。
 
+目录:
+
+- 1 [注册基本信息](https://github.com/cryptokylin/KEEP#1-%E6%B3%A8%E5%86%8C%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF)
+- 2 [包含适当的李嘉图合约](https://github.com/cryptokylin/KEEP#2-%E5%8C%85%E5%90%AB%E9%80%82%E5%BD%93%E7%9A%84%E6%9D%8E%E5%98%89%E5%9B%BE%E5%90%88%E7%BA%A6)
+- 3 [通过第三方安全团队的审核](https://github.com/cryptokylin/KEEP#3-%E9%80%9A%E8%BF%87%E7%AC%AC%E4%B8%89%E6%96%B9%E5%AE%89%E5%85%A8%E5%9B%A2%E9%98%9F%E7%9A%84%E5%AE%A1%E6%A0%B8)
+- 4 [resign权限](https://github.com/cryptokylin/KEEP#4-resign%E6%9D%83%E9%99%90)
+- 5 [接口规范](https://github.com/cryptokylin/KEEP#5-%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83)
+
+
 为达到上述目的，合约应满足如下条件（Checklist）：
 
 ### 1. 注册基本信息
